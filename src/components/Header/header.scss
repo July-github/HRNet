@@ -1,0 +1,22 @@
+.App-header{
+    display: flex;
+    align-items: center;
+    background-color: rgba(129, 160, 20, 0.2);
+
+    > a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+
+        > img{
+            width: 80px;
+            margin: 10px;
+        }
+
+        > p {
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+}

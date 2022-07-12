@@ -1,0 +1,21 @@
+.error_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 24%;
+    height: 100vh;
+}
+
+.error_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.error_logo > img{
+    width: 70%;
+}
