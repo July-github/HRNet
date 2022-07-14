@@ -15,7 +15,7 @@
     text-align: center;
     width: 39%;
     height: 120%;
-    background-color: rgba(129, 160, 20, 0.2);
+    background-color: rgba(129, 160, 20, 0.1);
 
     & > a{
         text-decoration: none;
@@ -50,11 +50,11 @@ From {
     -o-transform: scale(1.0);
 }
 To {
-    transform: scale(1.6);
-    -webkit-transform: scale(1.6);
-    -moz-transform: scale(1.6);
-    -ms-transform: scale(1.6);
-    -o-transform: scale(1.6);
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
 }
 }
 

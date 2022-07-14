@@ -1,6 +1,76 @@
-form{
-    background-color: rgba(129, 160, 20, 0.05);
-    width: 75%;
+@import './Calendar.scss';
+@import 'react-date-picker/dist/DatePicker.css';
+
+.employee_creation{
+    height: auto;
+}
+
+.create_form{
+    width: 70%;
     margin: 20px auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 20px;
+}
+
+#adress{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 60px;
+    width: 100%;
+    border-left: 1px solid;
+    padding-left: 15px;
+
+    > p{
+        font-size: 40px;
+        margin: 0;
+    }
+}
+
+#save_button{
+    width: 60px;
+}
+
+.create_form > label, #adress > label{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+    width: 100%;
+    margin: 30px 0;
+
+    > input, select{
+        height: 50px;
+        width: 70%;
+        padding: 20px 20px 0 20px;
+        box-sizing: content-box;
+        border: none;
+        border-bottom: rgba(129, 160, 20, 0.1) solid 4px;
+        font-size: 25px;
+        vertical-align: bottom;
+        text-align: left;
+    }
+}
+
+#adress > label{
+    margin-left: 30px;
+}
+
+#save_button{
+    margin: 60px;
+    font-size: 40px;
+    width: 180px;
+    padding: 20px;
+    background-color: rgba(129, 160, 20, 0.5);
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
