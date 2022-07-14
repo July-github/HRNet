@@ -82,10 +82,11 @@
   font-weight: bold;
   font-size: 0.75em;
 }
-.react-calendar__month-view__weekdays__weekday {
+.react-calendar__month-view__weekdays__weekday, .react-calendar__year-view .react-calendar__tile, .react-calendar__decade-view .react-calendar__tile, .react-calendar__century-view .react-calendar__tile {
   padding: 0.5em;
+  font-size: 19px;
 
-  >abbr {
+  > abbr {
     font-size: 19px;
   }
 }

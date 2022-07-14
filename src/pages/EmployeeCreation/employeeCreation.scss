@@ -6,7 +6,7 @@
 }
 
 .create_form{
-    width: 70%;
+    width: 60%;
     margin: 20px auto;
     text-align: center;
     display: flex;
@@ -16,7 +16,7 @@
     padding: 20px;
 }
 
-#adress{
+#address{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -35,7 +35,7 @@
     width: 60px;
 }
 
-.create_form > label, #adress > label{
+.create_form > label, #address > label{
     font-size: 30px;
     display: flex;
     justify-content: space-between;
@@ -51,18 +51,23 @@
         box-sizing: content-box;
         border: none;
         border-bottom: rgba(129, 160, 20, 0.1) solid 4px;
-        font-size: 25px;
+        font-size: 30px;
         vertical-align: bottom;
         text-align: left;
+
+        &:focus-visible{
+            background-color:rgba(129, 160, 20, 0.1);
+            outline: none;
+        }
     }
 }
 
-#adress > label{
+#address > label{
     margin-left: 30px;
 }
 
 #save_button{
-    margin: 60px;
+    margin: 60px 50%;
     font-size: 40px;
     width: 180px;
     padding: 20px;
@@ -73,4 +78,12 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+.invalid_field{
+    font-size: 30px;
+    color: red;
+    text-align: left;
+    padding-left: 30%;
+    width: 100%;
 }
