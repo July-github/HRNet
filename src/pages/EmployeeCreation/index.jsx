@@ -1,20 +1,27 @@
 import Header from '../../components/Header';
 import DatePicker from 'react-date-picker/dist/entry.nostyle';
 import React, { useState } from 'react';
+import PureModal from 'react-pure-modal';
+import './modal.scss';
 
 function EmployeeCreation(){
     const [birthValue, setBirthValue] = useState(new Date())
     const [startValue, setStartValue] = useState(new Date())
     const [isValidZip, setIsValidZip] = useState(true)
+    const [modal, setModal] = useState(false);
 
     function checkZipCode(e){
         const zipCode = /(^[0-9]{5}$)/;
         const testZip = zipCode.test(e.target.value)
-        console.log(isValidZip) 
 
         if (testZip===false) return setIsValidZip(false)
 
         setIsValidZip(true)
+    }
+
+    function viewCreationMessage(e){
+        e.preventDefault()
+        setModal(true)
     }
 
     return(
@@ -62,8 +69,21 @@ function EmployeeCreation(){
                         Department
                         <input type='text' id='department'/>
                     </label>
-                <input type='submit' value='Save' id='save_button'></input>
+                <input type='submit' value='Save' id='save_button' onClick={(e) => viewCreationMessage(e)}></input>
             </form>
+            <PureModal className='pureModal'
+                header=""
+                footer=''
+                isOpen={modal}
+                closeButton="X"
+                closeButtonPosition="header"
+                onClose={() => {
+                    setModal(false);
+                    return true;
+                }}
+                >
+                <p>Employee created!</p>
+            </PureModal>;
         </div>
     )
 }
