@@ -1,7 +1,9 @@
 import MaterialTable from 'material-table';
 import { data } from '../../data';
+import { ThemeProvider, createTheme } from '@mui/material';
 
 function Table(){
+    const defaultMaterialTheme = createTheme();
 
     const columns = [
         { title: 'First Name', field: 'firstname' },
@@ -11,8 +13,14 @@ function Table(){
       ]
 
     return (
-        <div style={{ maxWidth: '100%' }}>
-          <MaterialTable columns={columns} data={data} title='Books Directory' />
+        <div style={{ width: '90%', height: '100%', margin: 'auto' }}>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            />
+            <ThemeProvider theme={defaultMaterialTheme}>
+                <MaterialTable columns={columns} data={data} title='Employees' />
+            </ThemeProvider>
         </div>
       )
 }

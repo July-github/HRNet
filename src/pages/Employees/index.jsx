@@ -7,7 +7,7 @@ function Employees(){
         <div>
             <Header />
             <h2>Employees List</h2>
-            <Table/>
+            <Table />
         </div>
     )
 }
