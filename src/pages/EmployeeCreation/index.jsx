@@ -82,7 +82,7 @@ function EmployeeCreation(){
                     return true;
                 }}
                 >
-                <p>Employee created!</p>
+                <p>Employee successfully created!</p>
             </PureModal>;
         </div>
     )

@@ -1,11 +1,13 @@
 import Header from '../../components/Header';
+import Table from '../../components/Table/Table';
 
 function Employees(){
 
     return(
         <div>
             <Header />
-            Employees
+            <h2>Employees List</h2>
+            <Table/>
         </div>
     )
 }
