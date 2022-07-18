@@ -1,5 +1,6 @@
 .App-header{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: rgba(129, 160, 20, 0.1);
 
@@ -8,6 +9,10 @@
         align-items: center;
         text-decoration: none;
         color: black;
+
+        &:hover{
+            color: rgba(129, 160, 20, 1);
+        }
 
         > img{
             width: 80px;
@@ -18,5 +23,57 @@
             font-size: 32px;
             font-weight: 600;
         }
+    }
+
+    > .menu_closed{
+        margin: 10px 20px;
+        font-size: 60px;
+        cursor: pointer;
+
+        &:hover{
+            color: rgba(129, 160, 20, 0.8);
+        }
+    }
+
+    > .menu_open{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 20px;
+        margin-right: 20px;
+        text-align: left;
+
+        > .menu_links{
+            display: flex;
+            flex-direction: column;
+        }
+
+        & a{
+            text-decoration: none;
+            color: black;
+            margin-top: 5px;
+
+            &:hover{
+                color: rgba(129, 160, 20, 0.8);
+            }
+        }
+    }
+}
+
+.menu_icon{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.close_menu{
+    font-size: 30px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+
+    &:hover{
+        color: rgba(129, 160, 20, 0.8);
     }
 }

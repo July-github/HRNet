@@ -20,6 +20,10 @@
     & > a{
         text-decoration: none;
         color: black;
+
+        &:hover{
+            color: rgba(129, 160, 20, 1);
+        }
     }
 }
 

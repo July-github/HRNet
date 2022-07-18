@@ -2,6 +2,7 @@
 @import '../../pages/Home/home.scss';
 @import '../../pages/Error/error.scss';
 @import '../../pages/EmployeeCreation//employeeCreation.scss';
+@import '../../components/Table/table.scss';
 
 body {
   margin: 0;
@@ -22,6 +23,7 @@ h2{
   text-align: center;
   text-transform: capitalize;
   font-weight: 500;
+  margin: 40px 0;
 }
 
 h1{
