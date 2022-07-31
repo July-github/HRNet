@@ -5,10 +5,9 @@ import { useState } from 'react';
 import { RiArrowDropRightFill } from "react-icons/ri";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-
 function Header(){
     const [openMenu, setOpenMenu] = useState(false)
-
+// console.log('header')
     return(
         <header className="App-header">
             <Link to='/'>

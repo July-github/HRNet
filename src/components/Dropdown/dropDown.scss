@@ -1,0 +1,37 @@
+.dropDown{
+    width: 400px;
+    font-size: 30px;
+    background-color: rgba(129, 160, 20, 0.1);
+    position: relative;
+}
+
+.icon_list{
+    margin: 5px;
+    font-size: 40px;
+    color: rgba(129, 160, 20, 0.5);
+    font-weight: 600;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.list{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+}
+
+.list_element{
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    border-bottom: solid 1px rgba(129, 160, 20, 0.5);
+
+    &:hover{
+        background-color: rgba(129, 160, 20, 0.5);
+    }
+}

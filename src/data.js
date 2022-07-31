@@ -1,5 +1,6 @@
 export const data = [
     { 
+        key: '1',
         firstname: 'Jane', 
         lastname: 'Doe', 
         startDate: '11/10/2019',
@@ -11,6 +12,7 @@ export const data = [
         zipCode: '10006',
     },
     { 
+        key: '2',
         firstname: 'Mohamed', 
         lastname: 'Ali', 
         startDate: '11/10/2012',
@@ -22,6 +24,7 @@ export const data = [
         zipCode: '40475',
     },
     { 
+        key: '3',
         firstname: 'Diane', 
         lastname: 'Fossey', 
         startDate: '07/23/2010',
@@ -33,6 +36,7 @@ export const data = [
         zipCode: '94016',
     },
     { 
+        key: '4',
         firstname: 'Ray', 
         lastname: 'Charles', 
         startDate: '08/04/2006',
@@ -44,6 +48,7 @@ export const data = [
         zipCode: '31701',
     },
     { 
+        key: '5',
         firstname: 'Grace', 
         lastname: 'Hopper', 
         startDate: '10/17/2002',
@@ -53,5 +58,29 @@ export const data = [
         city: 'New York',
         state: 'New York',
         zipCode: '10001',
+    },
+    { 
+        key: '6',
+        firstname: 'Claire', 
+        lastname: 'Foy', 
+        startDate: '11/30/20015',
+        department: 'Sales',
+        dateBirth:'02/12/1988',
+        street: 'Queen Road, 1',
+        city: 'Paris',
+        state: 'Texas',
+        zipCode: '75208',
+    },
+    { 
+        key: '7',
+        firstname: 'Martin', 
+        lastname: 'Luther', 
+        startDate: '07/20/2022',
+        department: 'Legal',
+        dateBirth:'04/04/1968',
+        street: 'Dream Avenue, 1963',
+        city: 'Washington',
+        state: 'Washington',
+        zipCode: '20001',
     },
 ]
