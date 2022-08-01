@@ -1,8 +1,7 @@
 import MaterialTable from 'material-table';
-import { data } from '../../data';
+import { datas } from '../../data';
 import { ThemeProvider, createTheme } from '@mui/material';
 import SortIcon from '../SortIcon';
-import { useState } from 'react';
 
 function Table(){
     const theme = createTheme();
@@ -41,7 +40,7 @@ function Table(){
                     <ThemeProvider theme={theme}>
                         <MaterialTable 
                             columns={columns} 
-                            data={data} 
+                            data={datas} 
                             title='Employees'
                             options={{
                                 headerStyle: {

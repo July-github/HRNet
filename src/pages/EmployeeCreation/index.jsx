@@ -1,13 +1,15 @@
 import Header from '../../components/Header';
 import FormInput from '../../components/FormInput';
 import DatePicker from 'react-date-picker/dist/entry.nostyle';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PureModal from 'react-pure-modal';
 import './modal.scss';
-import {data} from '../../data';
+import { datas } from '../../data';
 import { useDispatch } from 'react-redux';
 import DropDown from '../../components/Dropdown/index';
-// import { isValidForm, isInvalidForm, keyEmployee, resetForm } from '../../utils/store';
+import { submitForm, validForm, unvalidForm } from '../../redux/actions'
+import { CgDanger } from 'react-icons/cg';
+
 
 function EmployeeCreation(){
     const [firstName, setFirstName] = useState('')
@@ -19,23 +21,32 @@ function EmployeeCreation(){
     const [state, setState] = useState('')
     const [zipCode, setZipCode] = useState()
     const [department, setDepartment] = useState('')
-    const [key, setKey] = useState(data.length)
     const [isValidZip, setIsValidZip] = useState(true)
+    const [isValidFirst, setIsValidFirst] = useState(true)
+    const [isValidLast, setIsValidLast] = useState(true)
     const [formIsValid, setFormIsValid] = useState(true)
     const [modal, setModal] = useState(false);
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        localStorage.setItem('Array of employees', JSON.stringify(data))
-    },[])
+    // useEffect(() => {
+    //     localStorage.setItem('Array of employees', JSON.stringify(datas))
+    // },[])
+
+    function formatDate(date){
+        const dateNew = new Date (date)
+        const dateISO = dateNew.toISOString().split('T')[0]
+        const [year, month, day] = dateISO.split("-")
+
+        return [month, day, year].join("/")
+    }
 
     const newEmployee = {
-        'key' : data.length,
+        'id' : datas.length,
         'firstname' : firstName,
         'lastname' : lastName,
-        'dateBirth' : birthValue,
-        'startDate' : startValue,
+        'dateBirth' : formatDate(birthValue),
+        'startDate' : formatDate(startValue),
         'street' : street,
         'city' : city,
         'state' : state,
@@ -54,21 +65,23 @@ function EmployeeCreation(){
     }
 
     function checkForm(){
-        
+        setIsValidFirst(true)
+        setIsValidLast(true)  
+
         if(firstName === ''){ 
-            alert('the FirstName is required')
-            dispatch(setFormIsValid(false))
+            setIsValidFirst(false)
+            dispatch(unvalidForm())
         }
         if(lastName === ''){ 
-            alert('the LastName is required')
-            dispatch(setFormIsValid(false))
+            setIsValidLast(false)
+            dispatch(unvalidForm())
         }
-
-        else{
-            dispatch(setFormIsValid(true))
-            dispatch(setKey(key+1))
+        if((firstName === '') || (lastName === '')){
+            dispatch(unvalidForm())
         }
-        return
+        else {
+            dispatch(validForm()) 
+        }
     }
 
     function storeNewData(){
@@ -83,12 +96,16 @@ function EmployeeCreation(){
         setModal(true)
     }
 
-    function validForm(e){
+    function validateForm(e){
         e.preventDefault()
         checkForm()
-        if(formIsValid){
+        const submission = dispatch(submitForm(newEmployee))
+
+        if(submission){
             storeNewData()
-            // dispatch(resetForm())
+            setFormIsValid(true)
+        }else{
+            setFormIsValid(false)
         }
     }
 
@@ -96,22 +113,23 @@ function EmployeeCreation(){
         <div className='employee_creation'>
             <Header />
             <h2>Create Employee</h2>
-            {formIsValid ? null : <div>'invalid form :( !</div>}
-            <form className='create_form' onSubmit={validForm}>
+            <form className='create_form' onSubmit={validateForm}>
                 <FormInput
                     label='Firstname'
                     type='text'
                     id='firstname'
                     setValue={e => setFirstName(e.target.value)}
                 />
+                {isValidFirst? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
                 <FormInput
                     label='Lastname'
                     type='text'
                     id='lastname'
                     setValue={e => setLastName(e.target.value)}
-                />             
+                />  
+                {isValidLast? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
                 <label className='input-wrapper'>
-                    Date of Birth
+                    Date of Births
                     <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' />
                 </label>
                 <label className='input-wrapper'>
@@ -132,12 +150,13 @@ function EmployeeCreation(){
                         id='city'
                         setValue={e => setCity(e.target.value)}
                     />  
-                    <FormInput
-                        label='State'
-                        type='text'
-                        id='state'
-                        setValue={e => setState(e.target.value)}
-                    />  
+                    <div className='dropDepartment'>
+                        <label id='state'>State</label>
+                            <DropDown 
+                                setValue={setState}
+                                list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
+                            />
+                    </div>
                     <FormInput
                         label='Zip Code'
                         type='text'
@@ -146,11 +165,14 @@ function EmployeeCreation(){
                     />  
                     {!isValidZip? <div className='invalid_field'>Invalid Zip Code</div> : null}
                 </div>
-                <label id='department'>Department</label>
-                    <DropDown 
-                        setValue={setDepartment}
-                        list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
-                    />
+                <div className='dropDepartment'>
+                    <label id='department'>Department</label>
+                        <DropDown 
+                            setValue={setDepartment}
+                            list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
+                        />
+                </div>
+                {formIsValid ? null : <div className='invalidForm'>INVALID FORM <div className='invalidIcon'><CgDanger/></div></div>}
                 <button id='save_button' >Save</button>
             </form>
             <PureModal className='pureModal'
@@ -161,6 +183,7 @@ function EmployeeCreation(){
                 closeButtonPosition="header"
                 onClose={() => {
                     setModal(false);
+                    window.location.reload(true)
                     return true;
                 }}
                 >

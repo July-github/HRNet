@@ -1,6 +1,6 @@
-export const data = [
+export const datas = [
     { 
-        key: '1',
+        id: 1,
         firstname: 'Jane', 
         lastname: 'Doe', 
         startDate: '11/10/2019',
@@ -12,7 +12,7 @@ export const data = [
         zipCode: '10006',
     },
     { 
-        key: '2',
+        id: 2,
         firstname: 'Mohamed', 
         lastname: 'Ali', 
         startDate: '11/10/2012',
@@ -24,7 +24,7 @@ export const data = [
         zipCode: '40475',
     },
     { 
-        key: '3',
+        id: 3,
         firstname: 'Diane', 
         lastname: 'Fossey', 
         startDate: '07/23/2010',
@@ -36,7 +36,7 @@ export const data = [
         zipCode: '94016',
     },
     { 
-        key: '4',
+        id: 4,
         firstname: 'Ray', 
         lastname: 'Charles', 
         startDate: '08/04/2006',
@@ -48,7 +48,7 @@ export const data = [
         zipCode: '31701',
     },
     { 
-        key: '5',
+        id: 5,
         firstname: 'Grace', 
         lastname: 'Hopper', 
         startDate: '10/17/2002',
@@ -60,7 +60,7 @@ export const data = [
         zipCode: '10001',
     },
     { 
-        key: '6',
+        id: 6,
         firstname: 'Claire', 
         lastname: 'Foy', 
         startDate: '11/30/20015',
@@ -72,7 +72,7 @@ export const data = [
         zipCode: '75208',
     },
     { 
-        key: '7',
+        id: 7,
         firstname: 'Martin', 
         lastname: 'Luther', 
         startDate: '07/20/2022',

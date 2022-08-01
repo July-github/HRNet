@@ -24,17 +24,16 @@
     width: 100%;
     border-left: 1px solid;
     padding-left: 15px;
+    box-sizing: border-box;
 
     > p{
         font-size: 45px;
         font-weight: 500;
         margin: 0;
     }
-}
-
-#save_button{
-    width: 60px;
-    text-align: center;
+    > label{
+        margin-left: 30px;
+    }
 }
 
 label{
@@ -54,29 +53,30 @@ label{
 }
 
 input, select{
-        height: 50px;
-        width: 70%;
-        padding: 20px 20px 0 20px;
-        box-sizing: content-box;
-        border: none;
-        border-bottom: rgba(129, 160, 20, 0.1) solid 4px;
-        font-size: 30px;
-        vertical-align: bottom;
-        text-align: left;
+    height: 50px;
+    width: 70%;
+    padding: 20px 20px 0 20px;
+    box-sizing: content-box;
+    border: none;
+    border-bottom: rgba(129, 160, 20, 0.1) solid 4px;
+    font-size: 30px;
+    vertical-align: bottom;
+    text-align: left;
 
-        &:focus-visible{
-            background-color:rgba(129, 160, 20, 0.1);
-            outline: none;
-        }
+    &:focus-visible{
+        background-color:rgba(129, 160, 20, 0.1);
+        outline: none;
     }
+}
 
-
-#address > label{
-    margin-left: 30px;
+.dropDepartment{
+    display: flex;
+    align-items: flex-start;
 }
 
 #save_button{
-    margin: 60px 50%;
+    margin: 60px auto;
+    text-align: center;
     font-size: 40px;
     width: 180px;
     padding: 20px;
@@ -95,10 +95,45 @@ input, select{
     }
 }
 
-.invalid_field{
+.invalidForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
-    color: red;
-    text-align: left;
-    padding-left: 30%;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: rgba(0,0,0);
     width: 100%;
+    font-weight: 500;
+    margin: 40px auto;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.invalidField{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: rgba(0,0,0);
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 0 0 15px 15px;
+    -webkit-border-radius: 0 0 15px 15px;
+    -moz-border-radius: 0 0 15px 15px;
+    -ms-border-radius: 0 0 15px 15px;
+    -o-border-radius: 0 0 15px 15px;
+}
+
+.invalidIcon{
+    margin-left: 20px;
+    font-size: 40px;
+    color: red;
+    display: flex;
 }

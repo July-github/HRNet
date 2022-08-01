@@ -1,8 +1,9 @@
 .dropDown{
     width: 400px;
     font-size: 30px;
-    background-color: rgba(129, 160, 20, 0.1);
+    background-color: rgba(129, 160, 20, 0.05);
     position: relative;
+    margin: 20px 50px;
 }
 
 .icon_list{
@@ -22,16 +23,23 @@
     flex-direction: column;
     width: 100%;
     cursor: pointer;
+
+    & > ul {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
 }
 
-.list_element{
-    padding: 10px;
+.list_element {
+    padding: 15px;
     width: 100%;
     box-sizing: border-box;
     text-align: left;
-    border-bottom: solid 1px rgba(129, 160, 20, 0.5);
+    border-bottom: solid 1px rgba(129, 160, 20, 0.3);
+    list-style: none;
 
     &:hover{
-        background-color: rgba(129, 160, 20, 0.5);
+        background-color: rgba(129, 160, 20, 0.3);
     }
 }

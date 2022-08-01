@@ -41,7 +41,7 @@ function Dropdown({list, setValue}){
                 {show?
                     (<ul>
                         {datas.map(data => (
-                            <li key={data.index} className='list_element' onClick={() => selectItem(data)}>
+                            <li key={data.index} className='list_element' onClick={() => selectItem(data)} >
                                 {data.select}
                             </li>))}
                     </ul>)
