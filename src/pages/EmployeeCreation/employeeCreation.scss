@@ -65,6 +65,7 @@ input, select{
 
     &:focus-visible{
         background-color:rgba(129, 160, 20, 0.1);
+        border-bottom: rgba(129, 160, 20, 0.8) solid 4px;
         outline: none;
     }
 }
@@ -72,6 +73,7 @@ input, select{
 .dropDepartment{
     display: flex;
     align-items: flex-start;
+    width: 100%;
 }
 
 #save_button{

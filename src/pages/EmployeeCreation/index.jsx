@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import PureModal from 'react-pure-modal';
 import './modal.scss';
 import { datas } from '../../data';
+import { states } from '../../states'
 import { useDispatch } from 'react-redux';
 import DropDown from '../../components/Dropdown/index';
 import { submitForm, validForm, unvalidForm } from '../../redux/actions'
@@ -63,6 +64,9 @@ function EmployeeCreation(){
         setIsValidZip(true)
         setZipCode(e.target.value)
     }
+
+    const statesNames = []
+    states.map(state => (statesNames.push(state.name)))
 
     function checkForm(){
         setIsValidFirst(true)
@@ -154,7 +158,7 @@ function EmployeeCreation(){
                         <label id='state'>State</label>
                             <DropDown 
                                 setValue={setState}
-                                list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
+                                list={statesNames}
                             />
                     </div>
                     <FormInput
