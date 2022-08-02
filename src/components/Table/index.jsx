@@ -1,33 +1,33 @@
 import MaterialTable from 'material-table';
-import { datas } from '../../data';
 import { ThemeProvider, createTheme } from '@mui/material';
 import SortIcon from '../SortIcon';
 
 function Table(){
     const theme = createTheme();
+ 
+    function sortDates(a,b){
+        if(new Date(b.startDate) > new Date(a.startDate)){
+            return 1
+        }
+        if(new Date(b.startDate) < new Date(a.startDate)){
+            return -1
+        }
+        return 0
+    }
 
     const columns = [
         { title: 'First Name', field: 'firstname' },
         { title: 'Last Name', field: 'lastname' },
-        { title: 'Start Date', field: 'startDate', type:'date', customSort: ((a,b) => { 
-            if(new Date(b.startDate) > new Date(a.startDate)){
-                console.log('d', new Date(b.startDate), new Date(a.startDate))
-                return 1
-            }
-            if(new Date(b.startDate) < new Date(a.startDate)){
-                console.log('e')
-                return -1
-            }
-            console.log('f')
-            return 0
-        }) },
+        { title: 'Start Date', field: 'startDate', type:'date', customSort: sortDates },
         { title: 'Department', field: 'department' },
-        { title: 'Date of Birth', field: 'dateBirth', type:'date' },
+        { title: 'Date of Birth', field: 'dateBirth', type:'date', customSort: sortDates },
         { title: 'Street', field: 'street' },
         { title: 'City', field: 'city' },
         { title: 'State', field: 'state' },
         { title: 'Zip Code', field: 'zipCode' },
       ]
+
+    const datas = JSON.parse(localStorage.getItem('Array of employees'))
 
     return (
         <div className='tableBack'>

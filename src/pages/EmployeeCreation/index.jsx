@@ -26,13 +26,10 @@ function EmployeeCreation(){
     const [isValidFirst, setIsValidFirst] = useState(true)
     const [isValidLast, setIsValidLast] = useState(true)
     const [formIsValid, setFormIsValid] = useState(true)
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useState(false)
+    const [resetDrop, setResetDrop] = useState(false)
 
     const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     localStorage.setItem('Array of employees', JSON.stringify(datas))
-    // },[])
 
     function formatDate(date){
         const dateNew = new Date (date)
@@ -108,16 +105,25 @@ function EmployeeCreation(){
         if(submission){
             storeNewData()
             setFormIsValid(true)
-        }else{
+            setBirthValue(new Date())
+            setStartValue(new Date())
+            setResetDrop(true)    
+        }
+        else{
             setFormIsValid(false)
         }
+    }
+
+    function resetForm(){
+        setResetDrop(false)
+        document.getElementById("form").reset()
     }
 
     return( 
         <div className='employee_creation'>
             <Header />
             <h2>Create Employee</h2>
-            <form className='create_form' onSubmit={validateForm}>
+            <form id='form' className='create_form' onSubmit={validateForm}>
                 <FormInput
                     label='Firstname'
                     type='text'
@@ -159,6 +165,7 @@ function EmployeeCreation(){
                             <DropDown 
                                 setValue={setState}
                                 list={statesNames}
+                                resetDrop={resetDrop}
                             />
                     </div>
                     <FormInput
@@ -174,6 +181,7 @@ function EmployeeCreation(){
                         <DropDown 
                             setValue={setDepartment}
                             list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
+                            resetDrop={resetDrop}
                         />
                 </div>
                 {formIsValid ? null : <div className='invalidForm'>INVALID FORM <div className='invalidIcon'><CgDanger/></div></div>}
@@ -187,7 +195,7 @@ function EmployeeCreation(){
                 closeButtonPosition="header"
                 onClose={() => {
                     setModal(false);
-                    window.location.reload(true)
+                    resetForm()
                     return true;
                 }}
                 >

@@ -3,13 +3,15 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types'
 
 
-function Dropdown({list, setValue}){
+function Dropdown({list, setValue, resetDrop}){
     const [show, setShow] = useState(false)
     const [selectedValue, setSelectedValue] = useState('- Select -')
 
     useEffect(()=>{
         setValue(selectedValue)
-    }, [selectedValue, setValue])
+        console.log('resetDrop false')
+        if(resetDrop===true) {console.log('resetDrop true'); setSelectedValue('- Select -')}
+    }, [resetDrop, selectedValue, setValue])
 
     const datas=[]
 
@@ -37,7 +39,7 @@ function Dropdown({list, setValue}){
     return (
         <div className="dropDown">
             <div className="list" >
-                <div className='list_element first'>{selectedValue}</div>
+                <div className='list_element first' >{selectedValue}</div>
                 {show?
                     (<ul>
                         {datas.map(data => (
@@ -54,7 +56,8 @@ function Dropdown({list, setValue}){
 
 Dropdown.propTypes = {
     setValue: PropTypes.func,
-    list: PropTypes.array.isRequired
+    list: PropTypes.array.isRequired,
+    resetDrop: PropTypes.bool,
 }
 
 export default Dropdown
