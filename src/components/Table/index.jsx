@@ -5,7 +5,7 @@ import SortIcon from '../SortIcon';
 function Table(){
     const theme = createTheme();
  
-    function sortDates(a,b){
+    function sortStartDates(a,b){
         if(new Date(b.startDate) > new Date(a.startDate)){
             return 1
         }
@@ -15,12 +15,23 @@ function Table(){
         return 0
     }
 
+    function sortBirthDates(a,b){
+        if(new Date(b.dateBirth) > new Date(a.dateBirth)){
+            return 1
+        }
+        if(new Date(b.dateBirth) < new Date(a.dateBirth)){
+            return -1
+        }else{
+            return 0
+        }
+    }
+
     const columns = [
         { title: 'First Name', field: 'firstname' },
         { title: 'Last Name', field: 'lastname' },
-        { title: 'Start Date', field: 'startDate', type:'date', customSort: sortDates },
+        { title: 'Start Date', field: 'startDate', type:'date', customSort: sortStartDates },
         { title: 'Department', field: 'department' },
-        { title: 'Date of Birth', field: 'dateBirth', type:'date', customSort: sortDates },
+        { title: 'Date of Birth', field: 'dateBirth', type:'date', customSort: sortBirthDates },
         { title: 'Street', field: 'street' },
         { title: 'City', field: 'city' },
         { title: 'State', field: 'state' },

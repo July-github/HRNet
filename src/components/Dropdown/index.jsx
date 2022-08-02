@@ -9,8 +9,7 @@ function Dropdown({list, setValue, resetDrop}){
 
     useEffect(()=>{
         setValue(selectedValue)
-        console.log('resetDrop false')
-        if(resetDrop===true) {console.log('resetDrop true'); setSelectedValue('- Select -')}
+        if(resetDrop===true) {setSelectedValue('- Select -')}
     }, [resetDrop, selectedValue, setValue])
 
     const datas=[]

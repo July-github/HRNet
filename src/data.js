@@ -5,7 +5,7 @@ export const datas = [
         lastname: 'Doe', 
         startDate: '11/10/2019',
         department: 'Sales',
-        dateBirth:'04.09.2001',
+        dateBirth:'04/09/2001',
         street: 'Mapple Street, 12',
         city: 'New York',
         state: 'New York',
