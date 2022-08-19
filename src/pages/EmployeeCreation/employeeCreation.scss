@@ -1,5 +1,6 @@
 @import './Calendar.scss';
 @import 'react-date-picker/dist/DatePicker.css';
+@import 'ddown.scss';
 
 .employee_creation{
     height: auto;
@@ -138,4 +139,20 @@ input, select{
     font-size: 40px;
     color: red;
     display: flex;
+}
+
+@media (max-width: 818px) {
+    label{
+      font-size: 30px;
+    }
+
+    .create_form{
+        width: 80%;
+        margin: 15px auto;
+        padding: 15px;
+    }    
+
+    #address > p{
+        font-size: 35px;
+    }
 }

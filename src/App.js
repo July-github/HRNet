@@ -3,11 +3,13 @@ import Home from './pages/Home/index';
 import Employees from './pages/Employees/index';
 import EmployeeCreation from './pages/EmployeeCreation/index';
 import Error from './pages/Error/index';
+import Header from './components/Header/index';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/*' element={<Error/>}></Route>

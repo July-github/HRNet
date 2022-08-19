@@ -3,7 +3,6 @@
 @import '../../pages/Error/error.scss';
 @import '../../pages/EmployeeCreation//employeeCreation.scss';
 @import '../../components/Table/table.scss';
-@import '../../components/Dropdown/dropDown.scss';
 
 body {
   margin: 0;
@@ -29,4 +28,10 @@ h2{
 
 h1{
   margin: 0;
+}
+
+@media (max-width: 818px) {
+  h2{
+    font-size: 60px;
+    }
 }

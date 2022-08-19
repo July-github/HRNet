@@ -24,6 +24,20 @@
   }
 }
 
+@media (max-width: 818px) {
+  .react-date-picker__wrapper{
+    font-size: 25px;
+  }
+
+  .react-calendar{
+    padding: 0.4em;
+    position: absolute;
+    left: -100%;
+    width: 200%;
+    max-width: none;
+  }
+}
+
 .react-date-picker__calendar--open{
   width: 100%;
 }
@@ -33,6 +47,15 @@
   height: 30px;
   margin: 0 10px;
 }
+
+@media (max-width: 818px) {
+  .react-date-picker__button__icon{
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
+}
+
 .react-calendar--doubleView {
   width: 700px;
 }
@@ -70,6 +93,14 @@
   background: none;
   font-size: 30px;
 }
+
+@media (max-width: 818px) {
+  .react-calendar__navigation button{
+    font-size: 25px;
+    min-width: 35px;
+  }
+}
+
 .react-calendar__navigation button:disabled {
   background-color: #f0f0f0;
 }
@@ -121,6 +152,24 @@
   text-align: center;
   line-height: 16px;
 }
+
+
+@media (max-width: 818px) {
+  .react-calendar__month-view__weekdays__weekday > abbr{
+    font-size: 15px;
+    padding: 0.2em;
+  }
+  .react-calendar__month-view__weekdays__weekday{
+    padding: 0.2em;
+  }
+  .react-calendar__month-view__days__day > abbr{
+    font-size: 20px;
+  }
+  .react-calendar__year-view > abbr {
+    font-size: 15px;
+  }
+}
+
 .react-calendar__tile:disabled {
   background-color: #f0f0f0;
 }

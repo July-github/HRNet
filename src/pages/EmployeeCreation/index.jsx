@@ -1,4 +1,3 @@
-import Header from '../../components/Header';
 import FormInput from '../../components/FormInput';
 import DatePicker from 'react-date-picker/dist/entry.nostyle';
 import React, { useState } from 'react';
@@ -7,7 +6,8 @@ import './modal.scss';
 import { datas } from '../../data';
 import { states } from '../../states'
 import { useDispatch } from 'react-redux';
-import DropDown from '../../components/Dropdown/index';
+import Dropdown from 'react-ddown';
+import 'react-ddown/dist/index.scss';
 import { submitForm, validForm, unvalidForm } from '../../redux/actions'
 import { CgDanger } from 'react-icons/cg';
 
@@ -121,25 +121,22 @@ function EmployeeCreation(){
 
     return( 
         <div className='employee_creation'>
-            <Header />
             <h2>Create Employee</h2>
             <form id='form' className='create_form' onSubmit={validateForm}>
                 <FormInput
                     label='Firstname'
                     type='text'
-                    id='firstname'
                     setValue={e => setFirstName(e.target.value)}
                 />
                 {isValidFirst? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
                 <FormInput
                     label='Lastname'
                     type='text'
-                    id='lastname'
                     setValue={e => setLastName(e.target.value)}
                 />  
                 {isValidLast? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
                 <label className='input-wrapper'>
-                    Date of Births
+                    Date of Birth
                     <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' />
                 </label>
                 <label className='input-wrapper'>
@@ -151,18 +148,16 @@ function EmployeeCreation(){
                     <FormInput
                         label='Street'
                         type='text'
-                        id='street'
                         setValue={e => setStreet(e.target.value)}
                     />   
                     <FormInput
                         label='City'
                         type='text'
-                        id='city'
                         setValue={e => setCity(e.target.value)}
                     />  
                     <div className='dropDepartment'>
                         <label id='state'>State</label>
-                            <DropDown 
+                            <Dropdown 
                                 setValue={setState}
                                 list={statesNames}
                                 resetDrop={resetDrop}
@@ -171,14 +166,13 @@ function EmployeeCreation(){
                     <FormInput
                         label='Zip Code'
                         type='text'
-                        id='zip_code'
                         setValue={e => checkZipCode(e)}
                     />  
                     {!isValidZip? <div className='invalid_field'>Invalid Zip Code</div> : null}
                 </div>
                 <div className='dropDepartment'>
                     <label id='department'>Department</label>
-                        <DropDown 
+                        <Dropdown 
                             setValue={setDepartment}
                             list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
                             resetDrop={resetDrop}

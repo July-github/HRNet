@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 .home_left, .home_right{
@@ -15,11 +14,11 @@
     text-align: center;
     width: 39%;
     height: 120%;
-    background-color: rgba(129, 160, 20, 0.1);
 
     & > a{
         text-decoration: none;
         color: black;
+        padding-bottom: 30px;
 
         &:hover{
             color: rgba(129, 160, 20, 1);
@@ -41,7 +40,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 24%;
+    width: 18%;
     height: 100vh;
 }
 
@@ -54,11 +53,11 @@ From {
     -o-transform: scale(1.0);
 }
 To {
-    transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 }
 

@@ -7,7 +7,6 @@ function Home(){
 
     return(
         <>
-            <h1 className='App-name-home'>HRnet</h1>
             <div className='home_div'>
                 <div className='home_left'>
                     <Link to='/employees'>

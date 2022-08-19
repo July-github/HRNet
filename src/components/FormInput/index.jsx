@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 
-function FormInput({label, id, setValue, type}){
-    // console.log('input')
+function FormInput({label, setValue, type}){
 
     return(
         <div className="input-wrapper">
@@ -10,7 +9,7 @@ function FormInput({label, id, setValue, type}){
                 </label>
             <input 
                 type={type} 
-                id={id} 
+                id={label} 
                 onChange={setValue}
             />
         </div>
