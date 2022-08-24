@@ -10,7 +10,7 @@ function Header(){
     
     return(
         <header className="App-header">
-            <Link to='/#'>
+            <Link to='/'>
                 <img src={logo} alt='logo Wealth Healthy' />
                 <p className='App-name'>HRnet</p>
             </Link>
@@ -18,8 +18,8 @@ function Header(){
                 (<div className='menu_open'>
                     <div className='close_menu' onClick={() => setOpenMenu(false)}><AiOutlineCloseCircle /></div>
                     <div className='menu_links'>
-                        <Link to='/#/employees' onClick={() => setOpenMenu(false)}><RiArrowDropRightFill className='menu_icon' />List of employees</Link>
-                        <Link to='/#/employee_creation' onClick={() => setOpenMenu(false)}><RiArrowDropRightFill className='menu_icon' />Employee creation</Link>
+                        <Link to='/employees' onClick={() => setOpenMenu(false)}><RiArrowDropRightFill className='menu_icon' />List of employees</Link>
+                        <Link to='/employee_creation' onClick={() => setOpenMenu(false)}><RiArrowDropRightFill className='menu_icon' />Employee creation</Link>
                     </div>
                 </div>) 
                 : <CgMenu className='menu_closed' onClick={() => setOpenMenu(true)} />}
