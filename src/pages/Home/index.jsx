@@ -9,7 +9,7 @@ function Home(){
         <>
             <div className='home_div'>
                 <div className='home_left'>
-                    <Link to='/employees'>
+                    <Link to='/#/employees'>
                         View employees list
                     </Link>
                 </div>
@@ -17,7 +17,7 @@ function Home(){
                     <img src={logo} alt='logo Wealth Healthy' />
                 </div>
                 <div className='home_right'>
-                    <Link to='/Employee_creation'>
+                    <Link to='/#/Employee_creation'>
                         Create employee
                     </Link>
                 </div>

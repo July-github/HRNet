@@ -14,7 +14,7 @@ function Error(){
                     <img src={logo} alt='logo Wealth Healthy' />
                 </div>
                 <div className='home_right'>
-                    <Link to='/'>
+                    <Link to='/#'>
                         Go back to welcome page
                     </Link>
                 </div>
