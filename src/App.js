@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {HashRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home/index';
 import Employees from './pages/Employees/index';
 import EmployeeCreation from './pages/EmployeeCreation/index';
@@ -8,7 +8,7 @@ import Header from './components/Header/index';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router baseline='/'>
         <Header />
         <Routes>
           <Route path='/' element={<Home/>}></Route>
