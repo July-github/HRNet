@@ -1,6 +1,6 @@
 import FormInput from '../../components/FormInput';
 import DatePicker from 'react-date-picker/dist/entry.nostyle';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PureModal from 'react-pure-modal';
 import './modal.scss';
 import { datas } from '../../data';
@@ -30,6 +30,12 @@ function EmployeeCreation(){
     const [resetDrop, setResetDrop] = useState(false)
 
     const dispatch = useDispatch()
+
+    useEffect(()=>{
+        const ddown = document.getElementsByClassName('dropDown')
+        console.log(ddown)
+        for(const el of ddown) {el.classList.add('customized_ddown')}
+    }, [])
 
     function formatDate(date){
         const dateNew = new Date (date)
