@@ -1,5 +1,6 @@
 import { actions } from './reducer'
 import { selectEmployees } from '../redux/selector'
+import { datas } from '../data'
 
 export function resetForm(){
     return (dispatch, getState) => {
@@ -10,36 +11,26 @@ export function resetForm(){
 export function validForm(){
     return(dispatch, getState)=> {
         dispatch(actions.valid())
-        console.log('valid')
     }
 }
 
 export function unvalidForm(){
     return(dispatch, getState)=> {
         dispatch(actions.unvalid())
-        console.log('unvalid')
     }
 }
 
 export function checkValid(){
     return (dispatch, getState) => {
         const formValid = selectEmployees(getState()).formIsValid
-        console.log('formValid')
         return formValid
     }
 }
 
 export function submitForm(data){
     return (dispatch, getState) => {
-        const validation = dispatch(checkValid())
-        console.log(validation)
-        if(validation){
-            const dataReceived = JSON.parse(localStorage.getItem('Array of employees'))
-            const id = dataReceived.length + 1
-            dispatch(actions.submit(data, id))
-            return true
-        }else{
-            return false
-        }
+        const id = datas.length + 1
+        const newData = dispatch(actions.submit(data, id))
+        datas.push(newData.payload.data)
     }
 }

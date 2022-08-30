@@ -22,7 +22,9 @@ const { actions, reducer } = createSlice ({
         unvalid:{
             reducer: (draft, action) => { draft.formIsValid = false}
         },
-
+        reset:{
+            reducer: () => { return initialState }
+        }
     }
 })
 

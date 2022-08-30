@@ -8,7 +8,7 @@ import { states } from '../../states'
 import { useDispatch } from 'react-redux';
 import Dropdown from 'react-ddown';
 import 'react-ddown/dist/index.scss';
-import { submitForm, validForm, unvalidForm } from '../../redux/actions'
+import { submitForm, validForm, unvalidForm, checkValid, resetForm } from '../../redux/actions'
 import { CgDanger } from 'react-icons/cg';
 
 
@@ -85,28 +85,17 @@ function EmployeeCreation(){
         }
     }
 
-    function storeNewData(){
-
-        if(localStorage.getItem('Array of employees') === null){
-            localStorage.setItem('Array of employees', [])
-        }
-
-        const dataReceived = JSON.parse(localStorage.getItem('Array of employees'))
-        dataReceived.push(newEmployee)
-        localStorage.setItem('Array of employees', JSON.stringify(dataReceived))
-        setModal(true)
-    }
-
     function validateForm(e){
         e.preventDefault()
         checkForm()
-        const submission = dispatch(submitForm(newEmployee))
+        const submission = dispatch(checkValid())
 
         if(submission){
-            storeNewData()
+            dispatch(submitForm(newEmployee))
             setFormIsValid(true)
             setBirthValue(new Date())
             setStartValue(new Date())
+            setModal(true)
             setResetDrop(true)    
         }
         else{
@@ -114,9 +103,19 @@ function EmployeeCreation(){
         }
     }
 
-    function resetForm(){
+    function resetFields(){
         setResetDrop(false)
+        setBirthValue(new Date())
+        setStartValue(new Date())
+        setFirstName('')
+        setLastName('')
+        setStreet('')
+        setCity('')
+        setState('')
+        setZipCode()
+        setDepartment('')    
         document.getElementById("form").reset()
+        dispatch(resetForm())
     }
 
     return( 
@@ -189,7 +188,7 @@ function EmployeeCreation(){
                 closeButtonPosition="header"
                 onClose={() => {
                     setModal(false);
-                    resetForm()
+                    resetFields()
                     return true;
                 }}
                 >
