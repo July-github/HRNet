@@ -1,4 +1,39 @@
-# Getting Started with Create React App
+# HRNet
+
+Pass an internal web application, called HRnet, managing employee files, which uses a jQuery library to React.
+
+The site is live at https://july-github.github.io/HRNet/ 
+
+![library-react-redux](https://user-images.githubusercontent.com/76209231/178037472-04da7df1-be59-4179-8c38-f87389cdb6bb.svg)
+![tool-create-react-app](https://user-images.githubusercontent.com/76209231/169812977-cf802d09-7b36-4b2c-97ab-143955aef1fa.svg)
+![tool-sass](https://user-images.githubusercontent.com/76209231/169813018-fb083b76-0ea4-4a9c-816a-19786ccdd023.svg)
+![state-manager-redux](https://user-images.githubusercontent.com/76209231/176850855-196e3c78-434b-415d-8207-9b9483b819e6.svg)
+
+# 1. Launching the project
+
+## 1.1 Prerequisites
+
+* [NodeJS (version 12.18)](https://nodejs.org/en/) to run npm command
+
+or
+* [Yarn](https://yarnpkg.com/)
+
+## 1.2 Launching Front-End
+
+1. Clone the repo of the front-end
+
+    `git clone https://github.com/July-github/HRNet.git`
+    
+2. Install the dependencies by running the command 
+
+    `yarn` (or `yarn install`) or `npm i` (or `npm install`)
+    
+3. Launch the front-end on port 3000 (http://localhost:3000) by running the command 
+
+    `yarn start` or `npm start`
+    
+    
+# 2. Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
