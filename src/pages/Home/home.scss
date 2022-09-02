@@ -44,6 +44,32 @@
     height: 100vh;
 }
 
+@media (max-width: 818px) {
+    .home_div{
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .home_logo{
+        height: 30vh;
+    }
+
+    .home_left, .home_right {
+        width: 100%;
+    }
+
+    .home_left, .home_right > a {
+        font-size: 35px;
+    }
+
+    .home_left::after {
+        bottom: 64%;
+    }
+    .home_right::after{
+        bottom: 8%;
+    }
+}
+
 @keyframes scaling {
 From {
     transform: scale(1.0);

@@ -29,8 +29,11 @@ export function checkValid(){
 
 export function submitForm(data){
     return (dispatch, getState) => {
-        const id = datas.length + 1
-        const newData = dispatch(actions.submit(data, id))
-        datas.push(newData.payload.data)
+
+        const newDatas = selectEmployees(getState()).dataEmployees
+console.log(data, newDatas)
+        dispatch(actions.submit(data))
+        dispatch(actions.addEmployee(data, newDatas))
+        console.log(selectEmployees(getState()).dataEmployees)
     }
-}
+}   

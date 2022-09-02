@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import employeesReducer from "../redux/reducer";
+import employeesReducer from "./reducer";
 
 const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 

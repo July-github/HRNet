@@ -3,7 +3,7 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import SortIcon from '../SortIcon';
 import { sortStartDates, sortBirthDates } from './helpers'
 
-function Table(){
+function Table({datas}){
     const theme = createTheme();
  
     const columns = [
@@ -17,8 +17,6 @@ function Table(){
         { title: 'State', field: 'state' },
         { title: 'Zip Code', field: 'zipCode' },
       ]
-
-    const datas = JSON.parse(localStorage.getItem('Array of employees'))
 
     return (
         <div className='tableBack'>

@@ -8,7 +8,7 @@ import { states } from '../../states'
 import { useDispatch } from 'react-redux';
 import Dropdown from 'react-ddown';
 import 'react-ddown/dist/index.scss';
-import { submitForm, validForm, unvalidForm, checkValid, resetForm } from '../../redux/actions'
+import { submitForm, validForm, unvalidForm, checkValid } from '../../redux/actions'
 import { CgDanger } from 'react-icons/cg';
 
 
@@ -31,11 +31,10 @@ function EmployeeCreation(){
 
     const dispatch = useDispatch()
 
-    useEffect(()=>{
-        const ddown = document.getElementsByClassName('dropDown')
-        console.log(ddown)
-        for(const el of ddown) {el.classList.add('customized_ddown')}
-    }, [])
+    // useEffect(()=>{
+    //     const ddown = document.getElementsByClassName('dropDown')
+    //     for(const el of ddown) { el.classList.add('customized_ddown') }
+    // }, [])
 
     function formatDate(date){
         const dateNew = new Date (date)
@@ -46,16 +45,16 @@ function EmployeeCreation(){
     }
 
     const newEmployee = {
-        'id' : datas.length,
-        'firstname' : firstName,
-        'lastname' : lastName,
-        'dateBirth' : formatDate(birthValue),
-        'startDate' : formatDate(startValue),
-        'street' : street,
-        'city' : city,
-        'state' : state,
-        'zip Code' : zipCode,
-        'department' : department,
+        id : datas.length,
+        firstname : firstName,
+        lastname : lastName,
+        dateBirth : formatDate(birthValue),
+        startDate : formatDate(startValue),
+        street : street,
+        city : city,
+        state : state,
+        zip_code : zipCode,
+        department : department,
     }
 
     function checkZipCode(e){
@@ -86,6 +85,7 @@ function EmployeeCreation(){
         if((firstName === '') || (lastName === '')){
             dispatch(unvalidForm())
         }
+
         else {
             dispatch(validForm()) 
         }
@@ -121,7 +121,6 @@ function EmployeeCreation(){
         setZipCode()
         setDepartment('')    
         document.getElementById("form").reset()
-        dispatch(resetForm())
     }
 
     return( 
