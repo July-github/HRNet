@@ -1,6 +1,5 @@
 import { actions } from './reducer'
 import { selectEmployees } from '../redux/selector'
-import { datas } from '../data'
 
 export function resetForm(){
     return (dispatch, getState) => {
@@ -30,10 +29,9 @@ export function checkValid(){
 export function submitForm(data){
     return (dispatch, getState) => {
 
-        const newDatas = selectEmployees(getState()).dataEmployees
-console.log(data, newDatas)
+        const getCurrentEmployees = selectEmployees(getState()).dataEmployees
         dispatch(actions.submit(data))
-        dispatch(actions.addEmployee(data, newDatas))
+        dispatch(actions.addEmployee(data, getCurrentEmployees))
         console.log(selectEmployees(getState()).dataEmployees)
     }
 }   

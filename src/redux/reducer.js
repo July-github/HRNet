@@ -18,9 +18,9 @@ const { actions, reducer } = createSlice ({
             }
         },
         addEmployee:{
-            prepare: (data, allEmployees) => ({ payload:{data, allEmployees} }),
+            prepare: (data, currentEmployees) => ({ payload:{data, currentEmployees} }),
             reducer: (draft, action) => {
-                draft.dataEmployees = [...action.payload.allEmployees, action.payload.data]
+                draft.dataEmployees = [...action.payload.currentEmployees, action.payload.data]
                 return;
             }
         },

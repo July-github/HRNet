@@ -1,11 +1,12 @@
 import FormInput from '../../components/FormInput';
 import DatePicker from 'react-date-picker/dist/entry.nostyle';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PureModal from 'react-pure-modal';
 import './modal.scss';
 import { datas } from '../../data';
 import { states } from '../../states'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
+import { selectEmployees } from '../../redux/selector'
 import Dropdown from 'react-ddown';
 import 'react-ddown/dist/index.scss';
 import { submitForm, validForm, unvalidForm, checkValid } from '../../redux/actions'
@@ -31,11 +32,6 @@ function EmployeeCreation(){
 
     const dispatch = useDispatch()
 
-    // useEffect(()=>{
-    //     const ddown = document.getElementsByClassName('dropDown')
-    //     for(const el of ddown) { el.classList.add('customized_ddown') }
-    // }, [])
-
     function formatDate(date){
         const dateNew = new Date (date)
         const dateISO = dateNew.toISOString().split('T')[0]
@@ -44,8 +40,10 @@ function EmployeeCreation(){
         return [month, day, year].join("/")
     }
 
+    const getCountEmployees = useSelector(selectEmployees).dataEmployees.length
+
     const newEmployee = {
-        id : datas.length,
+        id : getCountEmployees+1,
         firstname : firstName,
         lastname : lastName,
         dateBirth : formatDate(birthValue),
