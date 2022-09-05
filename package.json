@@ -16,6 +16,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "jsdoc": "^3.6.11",
     "material-table": "^2.0.3",
     "react": "^18.2.0",
     "react-date-picker": "^8.4.0",

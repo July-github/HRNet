@@ -1,15 +1,18 @@
 .tableBack{
     width: 95%;
-    background-color: rgba(129, 160, 20, 0.1);
-    margin: auto;
-    padding: 10px;
+    margin: 20px auto;
     display: flex;
+
+    & tbody tr:hover{
+        background-color: rgba(69,77,102,0.6);
+        color: white;
+        font-weight: 600;
+        font-size: 25px;
+    }
 }
 
 .tableContainer{
     width: 100%;
-    background-color: rgba(129, 160, 20, 0.2);
-    padding: 5px;
     margin: auto;
 }
 

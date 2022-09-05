@@ -6,6 +6,9 @@ import Error from './pages/Error/index';
 import Header from './components/Header/index';
 
 function App() {
+
+//Use of HashRouter so I could create a Github Page
+
   return (
     <div className="App">
       <Router baseline='/'>

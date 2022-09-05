@@ -3,7 +3,6 @@ import DatePicker from 'react-date-picker/dist/entry.nostyle';
 import React, { useState } from 'react';
 import PureModal from 'react-pure-modal';
 import './modal.scss';
-import { datas } from '../../data';
 import { states } from '../../states'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectEmployees } from '../../redux/selector'
@@ -32,6 +31,11 @@ function EmployeeCreation(){
 
     const dispatch = useDispatch()
 
+    /**
+     * Format a date to render
+     * @param {date} date 
+     * @returns formatted date to render
+     */
     function formatDate(date){
         const dateNew = new Date (date)
         const dateISO = dateNew.toISOString().split('T')[0]
@@ -55,6 +59,10 @@ function EmployeeCreation(){
         department : department,
     }
 
+    //Render the list of the states in the dropdown
+    const statesNames = []
+    states.map(state => (statesNames.push(state.name)))
+
     function checkZipCode(e){
         const zipCodeEntry = /(^[0-9]{5}$)/;
         const testZip = zipCodeEntry.test(e.target.value)
@@ -65,8 +73,19 @@ function EmployeeCreation(){
         setZipCode(e.target.value)
     }
 
-    const statesNames = []
-    states.map(state => (statesNames.push(state.name)))
+    function checkState(){
+        if(state === "- Select -") {
+            return null
+        }
+        else { return setState }
+    }
+
+    function checkDepartment(){
+        if(department === "- Select -") {
+            return null
+        }
+        else { return setDepartment}
+    }
 
     function checkForm(){
         setIsValidFirst(true)
@@ -123,7 +142,7 @@ function EmployeeCreation(){
 
     return( 
         <div className='employee_creation'>
-            <h2>Create Employee</h2>
+            <h1>Create Employee</h1>
             <form id='form' className='create_form' onSubmit={validateForm}>
                 <FormInput
                     label='Firstname'
@@ -137,33 +156,36 @@ function EmployeeCreation(){
                     setValue={e => setLastName(e.target.value)}
                 />  
                 {isValidLast? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
-                <label className='input-wrapper'>
-                    Date of Birth
-                    <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' />
-                </label>
-                <label className='input-wrapper'>
-                    Start Date
-                    <DatePicker onChange={setStartValue} value={startValue} locale='en-EN' />
-                </label>
+                <div className='birth_Date'>
+                <label className='input-wrapper'>Date of Birth</label>
+                <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' />
+                </div>
+                <div className='start_Date'>
+                <label className='input-wrapper'>Start Date</label>
+                <DatePicker onChange={setStartValue} value={startValue} locale='en-EN' />
+                </div>
                 <div id='address'>
                     <p>Address</p>
-                    <FormInput
-                        label='Street'
-                        type='text'
-                        setValue={e => setStreet(e.target.value)}
-                    />   
+                    <div className="input-wrapper">
+                        <label htmlFor='Street'>Street</label>
+                        <textarea 
+                            type='text'
+                            id='Street'
+                            onChange={e => setStreet(e.target.value)}
+                        />
+                    </div>
                     <FormInput
                         label='City'
                         type='text'
                         setValue={e => setCity(e.target.value)}
                     />  
-                    <div className='dropDepartment'>
+                    <div className='dropWrap'>
                         <label id='state'>State</label>
-                            <Dropdown 
-                                setValue={setState}
-                                list={statesNames}
-                                resetDrop={resetDrop}
-                            />
+                        <Dropdown 
+                            setValue={checkState}
+                            list={statesNames}
+                            resetDrop={resetDrop}
+                        />
                     </div>
                     <FormInput
                         label='Zip Code'
@@ -172,13 +194,13 @@ function EmployeeCreation(){
                     />  
                     {!isValidZip? <div className='invalid_field'>Invalid Zip Code</div> : null}
                 </div>
-                <div className='dropDepartment'>
+                <div className='dropWrap'>
                     <label id='department'>Department</label>
-                        <Dropdown 
-                            setValue={setDepartment}
-                            list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
-                            resetDrop={resetDrop}
-                        />
+                    <Dropdown 
+                        setValue={checkDepartment}
+                        list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
+                        resetDrop={resetDrop}
+                    />
                 </div>
                 {formIsValid ? null : <div className='invalidForm'>INVALID FORM <div className='invalidIcon'><CgDanger/></div></div>}
                 <button id='save_button' >Save</button>

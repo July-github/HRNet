@@ -33,9 +33,10 @@ function Table({datas}){
                             title='Employees'
                             options={{
                                 headerStyle: {
-                                    backgroundColor: 'rgba(129, 160, 20, 0.5)',
+                                    backgroundColor: 'rgba(69, 77, 102, 0.6)',
                                     color: '#FFF',
-                                    fontSize: '20px',
+                                    fontSize: '25px',
+                                    fontWeight: '600',
                                 },
                                 defaultSort: true,
                                 sorting: true,

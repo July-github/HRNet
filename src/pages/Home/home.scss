@@ -1,7 +1,10 @@
+@import '../../utils/mixins';
+
 .home_div{
     display: flex;
     align-items: center;
     justify-content: center;
+    @include page_position;
 }
 
 .home_left, .home_right{
@@ -21,7 +24,7 @@
         padding-bottom: 30px;
 
         &:hover{
-            color: rgba(129, 160, 20, 1);
+            color: white;
         }
     }
 }
@@ -30,9 +33,9 @@
     content: '';
     width: 60px;
     height: 4px;
-    background: rgb(129, 160, 20);
+    background: white;
     position: absolute;
-    bottom: 35%;
+    bottom: 45%;
 }
 
 .home_logo{
@@ -42,7 +45,8 @@
     justify-content: center;
     width: 18%;
     height: 100vh;
-}
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,156,154,0.01) 100%);}
 
 @media (max-width: 818px) {
     .home_div{

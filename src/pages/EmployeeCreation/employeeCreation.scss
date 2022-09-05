@@ -1,8 +1,9 @@
 @import './Calendar.scss';
 @import 'react-date-picker/dist/DatePicker.css';
+@import '../../utils/mixins';
 
 .employee_creation{
-    height: auto;
+    @include page_position;
 }
 
 .create_form{
@@ -14,13 +15,19 @@
     align-items: flex-start;
     height: 100%;
     padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 #address{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 60px;
+    margin: 60px 0;
     width: 100%;
     border-left: 1px solid;
     padding-left: 15px;
@@ -46,13 +53,36 @@ label{
     margin: 30px 0;
 }
 
-.input-wrapper{
+.start_Date, .birth_Date, .input-wrapper{
     display: flex;
     width: 100%;
     margin-top: 15px;
 }
 
-input, select{
+.react-date-picker{
+    width: 130%;
+    height: 80px;
+}
+
+@media (max-width: 1070px) {
+    .start_Date, .birth_Date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & > label {
+            align-self: flex-start;
+        }
+    }
+
+    .react-date-picker{
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+input, select, textarea{
     height: 50px;
     width: 70%;
     padding: 20px 20px 0 20px;
@@ -60,20 +90,46 @@ input, select{
     border: none;
     border-bottom: rgba(129, 160, 20, 0.1) solid 4px;
     font-size: 30px;
-    vertical-align: bottom;
+    vertical-align: middle;
     text-align: left;
 
     &:focus-visible{
-        background-color:rgba(129, 160, 20, 0.1);
-        border-bottom: rgba(129, 160, 20, 0.8) solid 4px;
+        background-color:rgba(239,238,180,0.4);
+        border-bottom: rgba(69,77,102,0.8) solid 4px;
         outline: none;
     }
 }
 
-.dropDepartment{
+#Firstname, #LastName, #Street, #City, #Zip_code {
+    font-size: 40px;
+}
+
+#Street {
+    height: 70px;
+    overflow-y: scroll;
+}
+
+.css-1ptx2yq-MuiInputBase-root-MuiInput-root > input{
+    font-size: 1.5rem;
+}
+
+.dropWrap{
     display: flex;
     align-items: flex-start;
     width: 100%;
+}
+
+@media (max-width: 1070px) {
+    .dropWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #department, #state {
+        align-self: flex-start;
+    }
 }
 
 #save_button{
@@ -82,7 +138,8 @@ input, select{
     font-size: 40px;
     width: 180px;
     padding: 20px;
-    background-color: rgba(129, 160, 20, 0.5);
+    background-color: rgba(69,77,102, 0.6);
+    color: white;
     border: none;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -90,10 +147,11 @@ input, select{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     cursor: pointer;
+    font-weight: 600;
 
     &:hover{
-        color: rgba(129, 160, 20, 1);
-        background-color: rgba(129, 160, 20, 0.1);
+        color: rgba(239,238,180, 1);
+        background-color: rgba(69,77,102,1);
     }
 }
 
@@ -142,16 +200,16 @@ input, select{
 
 @media (max-width: 818px) {
     label{
-      font-size: 30px;
+      font-size: 35px;
     }
 
     .create_form{
-        width: 80%;
+        width: 85%;
         margin: 15px auto;
         padding: 15px;
     }    
 
     #address > p{
-        font-size: 35px;
+        font-size: 40px;
     }
 }

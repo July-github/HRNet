@@ -3,6 +3,8 @@
 @import './pages/Error/error.scss';
 @import './pages/EmployeeCreation//employeeCreation.scss';
 @import './components/Table/table.scss';
+@import './components/SortIcon/sorticon.scss';
+@import './pages/Employees/employees.scss';
 
 body {
   margin: 0;
@@ -17,40 +19,49 @@ code {
     monospace;
 }
 
-h2{
+h1{
   color: black;
   font-size: 70px;
   text-align: center;
   text-transform: capitalize;
   font-weight: 500;
-  margin: 40px 0;
-}
-
-h1{
+  padding: 40px 0;
   margin: 0;
 }
 
 @media (max-width: 818px) {
-  h2{
+  h1{
     font-size: 60px;
     }
 }
 
 .customized_ddown{
-
+  
   & > .list{
-      background-color: rgba(129, 160, 20, 0.05);
+    background-color: rgba(239,238,180,0.4);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: rgba(69,77,102,1);  
+    font-size: 35px;
+    width: 600px;
   }
 
   & > .icon_list{
-      color: rgba(129, 160, 20, 0.5);
+    color: rgba(69,77,102,1);
+    right: -170px;
+    top:10px;
   }
 
-  & > .list .list_element {
-      border-bottom: solid 1px rgba(129, 160, 20, 0.3);
+  & > .list .list_element{
+    border-bottom: none;
 
-      &:hover{
-          background-color: rgba(129, 160, 20, 0.3);
-      }
+    &:hover{
+      background-color: rgba(69,77,102,0.4);
+      color: white;
+      font-weight: 600;
+    }
   }
 }

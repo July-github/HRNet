@@ -1,3 +1,5 @@
+//css to customize the Datepicker package
+
 .react-calendar {
   width: 100%;
   max-width: 100%;
@@ -12,7 +14,7 @@
   margin-left: 30px;
   width: 50%;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
 
   &__wrapper{
       padding: 15px;
@@ -26,7 +28,7 @@
 
 @media (max-width: 818px) {
   .react-date-picker__wrapper{
-    font-size: 25px;
+    font-size: 35px;
   }
 
   .react-calendar{
@@ -46,14 +48,6 @@
   width: 30px;
   height: 30px;
   margin: 0 10px;
-}
-
-@media (max-width: 818px) {
-  .react-date-picker__button__icon{
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-  }
 }
 
 .react-calendar--doubleView {

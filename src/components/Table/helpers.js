@@ -1,3 +1,5 @@
+//functions sorting dates from the material-table
+
 export function sortStartDates(a,b){
     if(new Date(b.startDate) > new Date(a.startDate)){
         return 1

@@ -1,9 +1,14 @@
-.App-header{
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+.header-back-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(129, 160, 20, 0.1);
+    background-color: rgba(239,238,180,0.2);
     width: 100%;
+    height: $height;
+    border-bottom: 2px solid rgba(69,77,102,0.6);
 
     > a {
         display: flex;
@@ -12,7 +17,7 @@
         color: black;
 
         &:hover{
-            color: rgba(129, 160, 20, 1);
+            @include header_hover;
         }
 
         > img{
@@ -33,7 +38,7 @@
         cursor: pointer;
 
         &:hover{
-            color: rgba(129, 160, 20, 0.8);
+            @include header_hover;
         }
     }
 
@@ -55,7 +60,7 @@
             margin-top: 5px;
 
             &:hover{
-                color: rgba(129, 160, 20, 0.8);
+                @include header_hover;
             }
         }
     }
@@ -86,6 +91,15 @@
     margin-right: 15px;
 
     &:hover{
-        color: rgba(129, 160, 20, 0.8);
+        @include header_hover;
     }
+}
+
+.App-header {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }

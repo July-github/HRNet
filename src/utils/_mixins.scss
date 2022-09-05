@@ -1,0 +1,31 @@
+@import './variables';
+
+@mixin page_position {
+    position: relative;
+    top: $height;
+    background: rgba(69,77,102,0.6);
+    background: radial-gradient(circle, rgba(69,77,102,0.6) 0%, rgba(239,238,180,0.6) 100%);  
+}
+
+@keyframes scaling {
+    From {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        -o-transform: scale(1.0);
+    }
+    To {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+}
+
+@mixin header_hover {
+    color: rgba(129, 160, 20, 0.8);
+    animation: scaling 1s infinite alternate;
+    -webkit-animation: scaling 1s infinite alternate;
+}

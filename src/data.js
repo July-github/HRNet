@@ -28,7 +28,7 @@ export const datas = [
         firstname: 'Diane', 
         lastname: 'Fossey', 
         startDate: '07/23/2010',
-        department: 'ingineering',
+        department: 'Engineering',
         dateBirth:'12/26/1985',
         street: 'Gorilla Avenue, 1932',
         city: 'San Fransisco',
