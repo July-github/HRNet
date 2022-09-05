@@ -65,3 +65,34 @@ h1{
     }
   }
 }
+
+@media (max-width: 1760px) {
+  .customized_ddown > .list{
+    width: 500px;
+    margin: auto;
+  }
+
+  .customized_ddown > .icon_list{
+    right: -95px;
+  }
+}
+@media (max-width: 1450px) {
+  .customized_ddown > .list{
+    width: 450px;
+    margin: 0;
+
+  }
+
+  .customized_ddown > .icon_list{
+    right: 0px;
+  }
+}
+@media (max-width: 466px) {
+  .customized_ddown > .list{
+    width: 350px;
+  }
+
+  .customized_ddown > .icon_list{
+    right: 30px;
+  }
+}

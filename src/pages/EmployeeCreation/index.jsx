@@ -156,13 +156,13 @@ function EmployeeCreation(){
                     setValue={e => setLastName(e.target.value)}
                 />  
                 {isValidLast? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
-                <div className='birth_Date'>
-                <label className='input-wrapper'>Date of Birth</label>
-                <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' />
+                <div className='input-wrapper date_picker'>
+                    <label className='birth_Date'>Date of Birth</label>
+                    <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' />
                 </div>
-                <div className='start_Date'>
-                <label className='input-wrapper'>Start Date</label>
-                <DatePicker onChange={setStartValue} value={startValue} locale='en-EN' />
+                <div className='input-wrapper date_picker'>
+                    <label className='start_Date'>Start Date</label>
+                    <DatePicker onChange={setStartValue} value={startValue} locale='en-EN' />
                 </div>
                 <div id='address'>
                     <p>Address</p>
