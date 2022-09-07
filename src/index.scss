@@ -34,9 +34,13 @@ h1{
     font-size: 60px;
     }
 }
-
+@media (max-width: 540px) {
+  h1{
+    font-size: 45px;
+    }
+}
 .customized_ddown{
-  
+
   & > .list{
     background-color: rgba(239,238,180,0.4);
     border-radius: 10px;
@@ -47,6 +51,7 @@ h1{
     color: rgba(69,77,102,1);  
     font-size: 35px;
     width: 600px;
+    margin: 0;
   }
 
   & > .icon_list{
@@ -76,11 +81,37 @@ h1{
     right: -95px;
   }
 }
-@media (max-width: 1450px) {
+// @media (max-width: 1450px) {
+//   .customized_ddown > .list{
+//     width: 550px;
+//     margin: 0;
+//   }
+
+//   .customized_ddown > .icon_list{
+//     right: -90px;
+//   }
+// }
+@media (max-width: 1030px) {
+  .customized_ddown > .list{
+    width: 500px;
+  }
+
+  .customized_ddown > .icon_list{
+    right: -70px;
+  }
+}
+@media (max-width: 944px) {
   .customized_ddown > .list{
     width: 450px;
-    margin: 0;
+  }
 
+  .customized_ddown > .icon_list{
+    right: -50px;
+  }
+}
+@media (max-width: 610px) {
+  .customized_ddown > .list{
+    width: 400px;
   }
 
   .customized_ddown > .icon_list{
@@ -93,6 +124,6 @@ h1{
   }
 
   .customized_ddown > .icon_list{
-    right: 30px;
+    right: 45px;
   }
 }

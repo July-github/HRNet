@@ -218,7 +218,7 @@ function EmployeeCreation(){
                 }}
                 >
                 <p>Employee successfully created!</p>
-            </PureModal>;
+            </PureModal>
         </div>
     )
 }

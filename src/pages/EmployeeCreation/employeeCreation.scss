@@ -1,6 +1,6 @@
 @import './Calendar.scss';
 @import 'react-date-picker/dist/DatePicker.css';
-@import '../../utils/mixins';
+@import '../../sass/mixins';
 
 .employee_creation{
     @include page_position;
@@ -213,6 +213,11 @@ input, select, textarea{
     display: flex;
 }
 
+@media (max-width: 1450px) {
+    .create_form{
+        width: 80%;
+    }   
+}
 @media (max-width: 818px) {
     label{
       font-size: 35px;
@@ -226,5 +231,30 @@ input, select, textarea{
 
     #address > p{
         font-size: 40px;
+    }
+}
+@media (max-width: 540px) {
+    label{
+      font-size: 25px;
+    }
+
+    .create_form{
+        width: 100%;
+        margin: 15px auto;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+}    
+
+    #address > p{
+        font-size: 30px;
+    }
+
+    .dropWrap {
+        align-items: flex-start;
     }
 }

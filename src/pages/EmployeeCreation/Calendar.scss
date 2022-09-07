@@ -38,6 +38,11 @@
     max-width: none;
   }
 }
+@media (max-width: 540px) {
+  .react-date-picker__wrapper{
+    font-size: 25px;
+  }
+}
 
 .react-date-picker__calendar--open{
   width: 100%;
@@ -47,6 +52,13 @@
   width: 30px;
   height: 30px;
   margin: 0 10px;
+}
+@media (max-width: 540px) {
+  .react-date-picker__button__icon{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    }
 }
 
 .react-calendar--doubleView {
@@ -110,6 +122,7 @@
 .react-calendar__month-view__weekdays__weekday, .react-calendar__year-view .react-calendar__tile, .react-calendar__decade-view .react-calendar__tile, .react-calendar__century-view .react-calendar__tile {
   padding: 0.5em;
   font-size: 19px;
+  width: 100px;
 
   > abbr {
     font-size: 19px;

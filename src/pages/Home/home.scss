@@ -1,4 +1,4 @@
-@import '../../utils/mixins';
+@import '../../sass/mixins';
 
 .home_div{
     display: flex;
@@ -29,14 +29,14 @@
     }
 }
 
-.home_left::after, .home_right::after {
-    content: '';
-    width: 60px;
-    height: 4px;
-    background: white;
-    position: absolute;
-    bottom: 45%;
-}
+    .home_left::after, .home_right::after {
+        content: '';
+        width: 60px;
+        height: 4px;
+        background: white;
+        position: absolute;
+        bottom: 45%;
+    }
 
 .home_logo{
     display: flex;
@@ -46,7 +46,32 @@
     width: 18%;
     height: 100vh;
     background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,156,154,0.01) 100%);}
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,156,154,0.01) 100%);
+}
+
+@keyframes scaling {
+    From {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        -o-transform: scale(1.0);
+    }
+    To {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+    }
+    
+.home_logo > img{
+    width: 90%;
+    margin: 20px;
+    animation: scaling 3s infinite alternate;
+    -webkit-animation: scaling 3s infinite alternate;
+}
 
 @media (max-width: 818px) {
     .home_div{
@@ -56,6 +81,11 @@
 
     .home_logo{
         height: 30vh;
+        width: 100%;
+
+        > img {
+            width: 20%;
+        }
     }
 
     .home_left, .home_right {
@@ -66,36 +96,9 @@
         font-size: 35px;
     }
 
-    .home_left::after {
-        bottom: 64%;
+    .home_left::after, .home_right::after {
+        content: none;
     }
-    .home_right::after{
-        bottom: 8%;
-    }
-}
-
-@keyframes scaling {
-From {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    -moz-transform: scale(1.0);
-    -ms-transform: scale(1.0);
-    -o-transform: scale(1.0);
-}
-To {
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-}
-}
-
-.home_logo > img{
-    width: 90%;
-    margin: 20px;
-    animation: scaling 3s infinite alternate;
-    -webkit-animation: scaling 3s infinite alternate;
 }
 
 .App-name-home{
