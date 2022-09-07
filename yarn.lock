@@ -8176,10 +8176,10 @@ react-date-picker@^8.4.0:
     react-fit "^1.4.0"
     update-input-width "^1.2.2"
 
-react-ddown@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/react-ddown/-/react-ddown-1.0.8.tgz#a89c8e310bf549b5c254c0cdec4d91d76e899d4d"
-  integrity sha512-mYKipi4QbHcq0eXMY3ME9Mz90JTVr0iBjcZaYaF//tGASzyFsPgcNViwKl6TG3YVkGiOhxuzORm38sxGgAdzpQ==
+react-ddown@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/react-ddown/-/react-ddown-1.0.9.tgz#82d2f5f08042a3ab631992550b87e9e85d641f70"
+  integrity sha512-jkn6NBjeLkuhAz4bNyx8dN/NJWZWffbpvsKWob99vQmLIZj+nRAvQIxDfpOSYefrAD56BWi7nvaFozFTs8h59w==
 
 react-dev-utils@^12.0.1:
   version "12.0.1"
