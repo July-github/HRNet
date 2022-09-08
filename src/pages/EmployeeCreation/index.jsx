@@ -10,7 +10,7 @@ import Dropdown from 'react-ddown';
 import 'react-ddown/dist/index.scss';
 import { submitForm, validForm, unvalidForm, checkValid } from '../../redux/actions'
 import { CgDanger } from 'react-icons/cg';
-
+import { formatDate } from './helpers';
 
 function EmployeeCreation(){
     const [firstName, setFirstName] = useState('')
@@ -30,19 +30,6 @@ function EmployeeCreation(){
     const [resetDrop, setResetDrop] = useState(false)
 
     const dispatch = useDispatch()
-
-    /**
-     * Format a date to render
-     * @param {date} date 
-     * @returns formatted date to render
-     */
-    function formatDate(date){
-        const dateNew = new Date (date)
-        const dateISO = dateNew.toISOString().split('T')[0]
-        const [year, month, day] = dateISO.split("-")
-
-        return [month, day, year].join("/")
-    }
 
     const getCountEmployees = useSelector(selectEmployees).dataEmployees.length
 

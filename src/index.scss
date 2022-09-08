@@ -12,6 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
 }
 
 code {
@@ -39,6 +40,12 @@ h1{
     font-size: 45px;
     }
 }
+
+.dropWrap > .customized_ddown {
+    margin: 0;
+    width: 100%;
+}
+
 .customized_ddown{
 
   & > .list{
@@ -50,14 +57,14 @@ h1{
     -o-border-radius: 10px;
     color: rgba(69,77,102,1);  
     font-size: 35px;
-    width: 600px;
+    width: 100%;
     margin: 0;
   }
 
   & > .icon_list{
     color: rgba(69,77,102,1);
-    right: -170px;
-    top:10px;
+    right: 8%;
+    top: 10px;
   }
 
   & > .list .list_element{
@@ -68,62 +75,5 @@ h1{
       color: white;
       font-weight: 600;
     }
-  }
-}
-
-@media (max-width: 1760px) {
-  .customized_ddown > .list{
-    width: 500px;
-    margin: auto;
-  }
-
-  .customized_ddown > .icon_list{
-    right: -95px;
-  }
-}
-// @media (max-width: 1450px) {
-//   .customized_ddown > .list{
-//     width: 550px;
-//     margin: 0;
-//   }
-
-//   .customized_ddown > .icon_list{
-//     right: -90px;
-//   }
-// }
-@media (max-width: 1030px) {
-  .customized_ddown > .list{
-    width: 500px;
-  }
-
-  .customized_ddown > .icon_list{
-    right: -70px;
-  }
-}
-@media (max-width: 944px) {
-  .customized_ddown > .list{
-    width: 450px;
-  }
-
-  .customized_ddown > .icon_list{
-    right: -50px;
-  }
-}
-@media (max-width: 610px) {
-  .customized_ddown > .list{
-    width: 400px;
-  }
-
-  .customized_ddown > .icon_list{
-    right: 0px;
-  }
-}
-@media (max-width: 466px) {
-  .customized_ddown > .list{
-    width: 350px;
-  }
-
-  .customized_ddown > .icon_list{
-    right: 45px;
   }
 }
