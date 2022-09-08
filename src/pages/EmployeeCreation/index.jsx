@@ -179,7 +179,7 @@ function EmployeeCreation(){
                         type='text'
                         setValue={e => checkZipCode(e)}
                     />  
-                    {!isValidZip? <div className='invalid_field'>Invalid Zip Code</div> : null}
+                    {isValidZip? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
                 </div>
                 <div className='dropWrap'>
                     <label id='department'>Department</label>
