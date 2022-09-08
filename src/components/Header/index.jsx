@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 import { CgMenu } from "react-icons/cg";
 import { useState } from 'react';
 import { RiArrowDropRightFill } from "react-icons/ri";
