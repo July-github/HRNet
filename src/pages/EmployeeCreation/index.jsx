@@ -20,7 +20,7 @@ function EmployeeCreation(){
     const [street, setStreet] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
-    const [zipCode, setZipCode] = useState()
+    const [zipCode, setZipCode] = useState('')
     const [department, setDepartment] = useState('')
     const [isValidZip, setIsValidZip] = useState(true)
     const [isValidFirst, setIsValidFirst] = useState(true)
@@ -42,7 +42,7 @@ function EmployeeCreation(){
         street : street,
         city : city,
         state : state,
-        zip_code : zipCode,
+        zipCode : zipCode,
         department : department,
     }
 
@@ -50,31 +50,19 @@ function EmployeeCreation(){
     const statesNames = []
     states.map(state => (statesNames.push(state.name)))
 
-    function checkZipCode(e){
+    function checkZipCode(el){
         const zipCodeEntry = /(^[0-9]{5}$)/;
-        const testZip = zipCodeEntry.test(e.target.value)
+        const zip = el
+        const testZip = zipCodeEntry.test(zip)
 
         if (testZip===false) return setIsValidZip(false)
-
-        setIsValidZip(true)
-        setZipCode(e.target.value)
-    }
-
-    function checkState(){
-        if(state === "- Select -") {
-            return null
+        else {
+            setZipCode(zip)
+            setIsValidZip(true)
         }
-        else { return setState }
     }
 
-    function checkDepartment(){
-        if(department === "- Select -") {
-            return null
-        }
-        else { return setDepartment}
-    }
-
-    function checkForm(){
+    function checkForm(e){
         setIsValidFirst(true)
         setIsValidLast(true)  
 
@@ -97,7 +85,7 @@ function EmployeeCreation(){
 
     function validateForm(e){
         e.preventDefault()
-        checkForm()
+        checkForm(e)
         const submission = dispatch(checkValid())
 
         if(submission){
@@ -122,7 +110,7 @@ function EmployeeCreation(){
         setStreet('')
         setCity('')
         setState('')
-        setZipCode()
+        setZipCode('')
         setDepartment('')    
         document.getElementById("form").reset()
     }
@@ -169,22 +157,22 @@ function EmployeeCreation(){
                     <div className='dropWrap'>
                         <label id='state'>State</label>
                         <Dropdown 
-                            setValue={checkState}
+                            setValue={e => setState(e.target.value)}
                             list={statesNames}
                             resetDrop={resetDrop}
                         />
                     </div>
                     <FormInput
-                        label='Zip Code'
+                        label='ZipCode'
                         type='text'
-                        setValue={e => checkZipCode(e)}
+                        setValue={e => checkZipCode(e.target.value)}
                     />  
                     {isValidZip? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
                 </div>
                 <div className='dropWrap'>
                     <label id='department'>Department</label>
                     <Dropdown 
-                        setValue={checkDepartment}
+                        setValue={setDepartment}
                         list={['Sales', 'Marketing', 'Engineering', 'Human Ressources', 'Legal']}
                         resetDrop={resetDrop}
                     />

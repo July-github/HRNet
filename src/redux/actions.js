@@ -1,12 +1,6 @@
 import { actions } from './reducer'
 import { selectEmployees } from '../redux/selector'
 
-// export function resetForm(){
-//     return (dispatch, getState) => {
-//         dispatch(actions.reset())
-//     }
-// }
-
 export function validForm(){
     return(dispatch, getState)=> {
         dispatch(actions.valid())
