@@ -157,7 +157,7 @@ function EmployeeCreation(){
                     <div className='dropWrap'>
                         <label id='state'>State</label>
                         <Dropdown 
-                            setValue={e => setState(e.target.value)}
+                            setValue={setState}
                             list={statesNames}
                             resetDrop={resetDrop}
                         />
