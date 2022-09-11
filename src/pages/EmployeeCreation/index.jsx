@@ -52,17 +52,16 @@ function EmployeeCreation(){
 
     function checkZipCode(el){
         const zipCodeEntry = /(^[0-9]{5}$)/;
-        const zip = el
-        const testZip = zipCodeEntry.test(zip)
+        const testZip = zipCodeEntry.test(el)
 
         if (testZip===false) return setIsValidZip(false)
         else {
-            setZipCode(zip)
+            setZipCode(el)
             setIsValidZip(true)
         }
     }
 
-    function checkForm(e){
+    function checkForm(){
         setIsValidFirst(true)
         setIsValidLast(true)  
 
