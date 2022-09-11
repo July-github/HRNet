@@ -1,0 +1,15 @@
+.dropDown{
+    background-color: rgba(129, 160, 20, 0.05);
+}
+
+.icon_list{
+    color: rgba(129, 160, 20, 0.5);
+}
+
+.list_element {
+    border-bottom: solid 1px rgba(129, 160, 20, 0.3);
+
+    &:hover{
+        background-color: rgba(129, 160, 20, 0.3);
+    }
+}
