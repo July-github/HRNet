@@ -1,7 +1,8 @@
 import MaterialTable from 'material-table';
 import { ThemeProvider, createTheme } from '@mui/material';
 import SortIcon from '../SortIcon';
-import { sortStartDates, sortBirthDates } from './helpers'
+import { sortStartDates, sortBirthDates } from './helpers';
+import PropTypes from 'prop-types'
 
 function Table({datas}){
     const theme = createTheme();
@@ -52,6 +53,10 @@ function Table({datas}){
             </div>
         </div>
       )
+}
+
+Table.propTypes = {
+    datas: PropTypes.array.isRequired,
 }
 
 export default Table

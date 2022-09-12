@@ -65,15 +65,20 @@ function EmployeeCreation(){
         setIsValidFirst(true)
         setIsValidLast(true)  
 
-        if(firstName === ''){ 
+        const firstnameEntry = /^[a-zA-ZÀ-ú,-]/g;
+        const lastnameEntry = /^[a-zA-ZÀ-ú,-]/g;
+        const testFirst = firstnameEntry.test(firstName)
+        const testLast = lastnameEntry.test(lastName)
+
+        if((firstName === '')||(testFirst===false)){ 
             setIsValidFirst(false)
             dispatch(unvalidForm())
         }
-        if(lastName === ''){ 
+        if((lastName === '')||(testLast===false)){ 
             setIsValidLast(false)
             dispatch(unvalidForm())
         }
-        if((firstName === '') || (lastName === '')){
+        if((firstName === '') || (lastName === '')||(testLast===false)||(testFirst===false)){
             dispatch(unvalidForm())
         }
 
@@ -132,7 +137,7 @@ function EmployeeCreation(){
                 {isValidLast? null : <div className='invalidField'>INVALID FIELD <div className='invalidIcon'><CgDanger/></div></div>}
                 <div className='input-wrapper date_picker'>
                     <label className='birth_Date'>Date of Birth</label>
-                    <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' />
+                    <DatePicker onChange={setBirthValue} value={birthValue} locale='en-EN' maxDate={new Date()} />
                 </div>
                 <div className='input-wrapper date_picker'>
                     <label className='start_Date'>Start Date</label>
